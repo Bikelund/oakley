@@ -1,3 +1,36 @@
-body {
+.section-1 {
     font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.intro-text1 {
+    margin: 0;
+    font-size: 20vh;
+    font-weight: bolder;
+}
+.intro-text1 .letter {
+    display: inline-block;
+}
+.intro-text {
+    transform: translate(-20px, -20px);
+    margin: 0;
+    font-size: 16vh;
+    font-weight: 100;
+}
+.section-1 .left {
+    width: 50vw;
+}
+.section-1 .right {
+    width: 50vw;
+    height: 100vh;
+    background: url(../images/2T1A3770.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+body{
+    margin: 0;
+    padding: 0;
 }
