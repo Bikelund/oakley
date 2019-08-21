@@ -1,4 +1,36 @@
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", "sans-serif";
+}
 
 
-
+.section-2{
+    height: 200vh;
+    background-color: #fff;
+}
+.intro-2{
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    top: 200px;
+    left: 200px;
+    letter-spacing: 1px;
+}
+.intro-2 > h1{
+    font-size: 36px;
+}
+.intro-2 > .glasses-2{
+    width: 300px;
+    margin: 20px;
+}
+.intro-2 > .change-glasses-2{
+    position: relative;
+    right: 45%;
+    bottom: 10px;
+}
+.intro-2 > .change-glasses-2:hover{
+    cursor: pointer;
+}
