@@ -1,7 +1,7 @@
 function checkVisibility() {
     let element = document.querySelector('.contact-text-3');
     
-    console.log(isInViewPort(element));
+    // console.log(isInViewPort(element));
 
     if (isInViewPort(element)) {
         element.classList.add('contact-text-visible-3');
