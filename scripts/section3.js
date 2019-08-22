@@ -4,24 +4,46 @@ function checkVisibility() {
 
     elements.forEach(function(element) {
 
+        // console.log(element.className);
+        // console.log(isInViewPort(element));
+
         if (isInViewPort(element)) {
 
             // console.log(element.className);
+
+            anime({
+                targets: '.img-3',
+                scale: 1.5,
+                opacity: 1
+            });
 
             if (element.className === 'contact text-3') {
                 element.classList.add('visible-3');
             }
 
             if (element.className === 'contact images-3') {
-                console.log(element.className);
+                // console.log(element.className);
+
+                // anime({
+                //     targets: '.images-3',
+                //     scale: 1.5
+                // });
             }
         }
         else {
+
+            // console.log(element.className);
             // if (element.className === 'contact text-3' || element.className === 'contact text-3 visible-3') {
             //     element.classList.remove('visible-3');
             // }
             
             element.classList.remove('visible-3');
+
+            anime({
+                targets: '.img-3',
+                scale: 1,
+                opacity: 0
+            });
         }
     });
 }
