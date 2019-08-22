@@ -6,7 +6,7 @@
     display: flex;
 }
 .intro-text1 {
-    margin: 0;
+    margin: 40px 0;
     font-size: 20vh;
     font-weight: 800;
 }
@@ -16,21 +16,82 @@
 .intro-text {
     transform: translate(-20px, -20px);
     margin: 0;
-    font-size: 16vh;
+    font-size: 10vh;
     font-weight: 100;
 }
 .section-1 .left {
     width: 50vw;
+    padding-left: 10vw;
 }
 .section-1 .right {
     width: 50vw;
     height: 100vh;
+}
+.section-1 .left .text-div {
+    position: absolute;
+}
+.chas {
+    width: 40vw;
+    height: 100vh;
+    margin: 0 auto;
     background: url(../images/2T1A3770.jpg);
-    background-position: center;
+    background-attachment: fixed;
+    background-position: right;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
+}
+#chas-img {
+    width: 100%;
+    height: auto;
 }
 body{
     margin: 0;
     padding: 0;
+}
+.boxes {
+    position: absolute;
+    background-color: rgba(red, green, blue, alpha);
+    width: 80px;
+    height: 80px;
+    transition: all .5s;
+}
+.box-top-left {
+    top: 10vh;
+    left: 0;
+    border-bottom: 6px solid black;
+    animation-name: boxFadeIn;
+    animation-duration: 6s;
+}
+.box-middle-left {
+    top: 30vh;
+    left: 0;
+    border-bottom: 6px solid black;
+    animation-name: boxFadeIn;
+    animation-duration: 6s;
+}
+.box-bottom-left {
+    top: 80vh;
+    left: 0;
+    border-bottom: 6px solid black;
+    animation-name: boxFadeIn;
+    animation-duration: 6s;
+}
+.boxes:hover {
+    border-bottom: 6px solid goldenrod;
+}
+@keyframes boxFadeIn {
+    0% {
+        left: -100px;
+        opacity: 0;
+    }
+    40%{
+        left: -100%;
+    }
+    60% {
+        left: 100px;
+        opacity: 1;
+    }
+    100% {
+        left: 0px;
+    }
 }
