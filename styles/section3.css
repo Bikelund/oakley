@@ -20,11 +20,11 @@
     /* border: solid; */
     display: flex;
     justify-content: center;
-    opacity: 0;
+    /* opacity: 0; */
     transition: all 1.5s ease-out;
 }
 
-.contact-section-visible {
+.visible-3 {
     opacity: 1;
     transform: translateX(0);
 }

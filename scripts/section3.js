@@ -4,13 +4,24 @@ function checkVisibility() {
 
     elements.forEach(function(element) {
 
-        // console.log(element);
-
         if (isInViewPort(element)) {
-            element.classList.add('contact-section-visible');
+
+            // console.log(element.className);
+
+            if (element.className === 'contact text-3') {
+                element.classList.add('visible-3');
+            }
+
+            if (element.className === 'contact images-3') {
+                console.log(element.className);
+            }
         }
         else {
-            element.classList.remove('contact-section-visible');
+            // if (element.className === 'contact text-3' || element.className === 'contact text-3 visible-3') {
+            //     element.classList.remove('visible-3');
+            // }
+            
+            element.classList.remove('visible-3');
         }
     });
 }
