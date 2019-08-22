@@ -6,7 +6,6 @@
     right: 4.8vw;
     width: 40vw;
     height: 100px;
-    background-color: rgba(red, green, blue, alpha);
     animation: linkFadeIn;
     animation-duration: 5s;
 }
@@ -16,12 +15,11 @@
 .nav-box a {
     text-decoration: none;
     color: black;
-    transition: all .3s;
+    transition: all .6s;
 }
 .nav-box a:hover {
-    color: goldenrod;
+    background-color: goldenrod;
 }
-
 @keyframes linkFadeIn {
     0% {
         top: -100px;

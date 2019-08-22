@@ -113,10 +113,15 @@ body{
     top: 70vh;
     left: 45vw;
     z-index: 2;
+    transition: all 2s;
 }
 .mash-three {
     top: 60vh;
     left: 50vw;
+}
+.mash-two:hover {
+    background-color: goldenrod;
+    cursor: default;
 }
 
 .line {
