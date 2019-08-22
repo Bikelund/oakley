@@ -26,65 +26,98 @@ anime.timeline().add({
     }
 });
 
-function checkForVisibility() {
-    var headers = document.querySelectorAll(".boxes");
-    headers.forEach(function(header) {
-      if (isElementInViewport(header)) {
-        header.classList.add('box-visible');
-      } else {
-        header.classList.remove('box-visible');
-      }
-    });
-  }
-  
-  function isElementInViewport (el) {
-    var rect = el.getBoundingClientRect();
-  
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth) 
-    );
-  }
-  
-  if (window.addEventListener) {
-    addEventListener('DOMContentLoaded', checkForVisibility, false); 
-    addEventListener('load', checkForVisibility, false);
-    addEventListener('scroll', checkForVisibility);
-  }
+let futureText = document.querySelector('.future');
+futureText.innerHTML = futureText.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter-future'>$&</span>");
 
-/* 
+anime.timeline({loop: true})
+.add({
+  targets: '.letter-future',
+  translateX: [40,0],
+  translateZ: 0,
+  opacity: [0,1],
+  easing: "easeOutExpo",
+  duration: 1000,
+  delay: function(el, i) {
+    return 100 * (i+1);
+  }
+}).add({
+  targets: '.letter-future',
+  color: '#DAA520',
+  easing: "easeInExpo",
+  duration: 600,
+  delay: function(el, i) {
+    return 30 * (i+1);
+  }
+}).add({
+  targets: '.letter-future',
+  color: '#000',
+  easing: "easeOutExpo",
+  duration: 600,
+  delay: function(el, i) {
+    return 30 * (i+1);
+  }
+}).add({
+  targets: '.letter-future',
+  translateX: [0,-30],
+  opacity: [1,0],
+  easing: "easeInExpo",
+  duration: 1000,
+  /* color: '#FFF', */
+  delay: function(el, i) {
+    return 100 * (i+1);
+  }
+});
+
+
+
+/* MASH */
+
 function parallax() {
-    let chasImg = document.querySelector(".chas");
-    let multiplier = 0.2;
-
-    if (isElementInViewport(chasImg)) {
-        let distance = elementDistanceFromBottomOfViewport(chasImg);
-        console.log(distance);
-        chasImg.style.transform = "translateY(" + multiplier * distance + "px)";
-    }
-}
+  let headers = document.querySelectorAll(".mash");
+  let mashOdd = document.querySelectorAll('.mashOdd');
+  let multiplier = 0.3;
   
-function isElementInViewport (el) {
-    let rect = el.getBoundingClientRect();
+  headers.forEach(function(header) {
+    if (isElementInViewport(header)) {
+      let distance = elementDistanceFromBottomOfViewport(header);
+      header.style.transform = "translateY(-" + multiplier * distance + "px)";
+    }
+  });
+  mashOdd.forEach(function(odd) {
+    if (isElementInViewport(odd)) {
+      let distance = elementDistanceFromBottomOfViewport(odd);
+      odd.style.transform = "translateY(-" + 0.2 * distance + "px)";
+    }
+  });
+}
 
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth) 
-    );
+function isElementInViewport (el) {
+  let rect = el.getBoundingClientRect();
+
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth) 
+  );
 }
 
 if (window.addEventListener) {
-    addEventListener('DOMContentLoaded', parallax, false); 
-    addEventListener('load', parallax, false);
-    addEventListener('scroll', parallax, false);
+  addEventListener('DOMContentLoaded', parallax, false); 
+  addEventListener('load', parallax, false);
+  addEventListener('scroll', parallax, false);
 }
 
 function elementDistanceFromBottomOfViewport(el) {
-    let rect = el.getBoundingClientRect();
+  let rect = el.getBoundingClientRect();
 
-    return window.innerHeight - rect.top;
-} */
+  return window.innerHeight - rect.top;
+}
+
+anime({
+  targets: 'a',
+  color: '#DAA520',
+  duration: 3000,
+  direction: 'alternate',
+  easing: 'easeInOutCubic'
+});

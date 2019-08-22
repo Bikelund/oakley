@@ -95,3 +95,26 @@ body{
         left: 0px;
     }
 }
+
+.future .letter-future {
+    display: inline-block;
+}
+.mash, .mashOdd {
+    background-color: black;
+    position: absolute;
+    padding: 10px 100px;
+    z-index: -2;
+}
+.mash-one {
+    top: 80vh;
+    left: 40vw;
+}
+.mash-two {
+    top: 70vh;
+    left: 45vw;
+    z-index: 2;
+}
+.mash-three {
+    top: 60vh;
+    left: 50vw;
+}
