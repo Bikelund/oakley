@@ -1,4 +1,4 @@
-
+/* Animates the text */
 let textWrapper = document.querySelector('.intro-text1');
 textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
 
@@ -62,15 +62,12 @@ anime.timeline({loop: true})
   opacity: [1,0],
   easing: "easeInExpo",
   duration: 1000,
-  /* color: '#FFF', */
   delay: function(el, i) {
     return 100 * (i+1);
   }
 });
 
-
-
-/* MASH */
+/* The Three Bars */
 
 function parallax() {
   let headers = document.querySelectorAll(".mash");
@@ -114,24 +111,16 @@ function elementDistanceFromBottomOfViewport(el) {
   return window.innerHeight - rect.top;
 }
 
+/* Animates the menubar */
 anime({
-  targets: 'a',
+  targets: '.menu-link',
   color: '#DAA520',
   duration: 3000,
   direction: 'alternate',
   easing: 'easeInOutCubic'
 });
 
-/* anime({
-  targets: '.line',
-    scaleX: [0,1],
-    opacity: [0,1],
-    easing: "easeInOutExpo",
-    duration: 1000,
-    delay: 2500,
-    backgroundColor: '#DAA520'
-}) */
-
+/* Animates the underline */
 anime.timeline()
 .add({
   targets: '.line',
