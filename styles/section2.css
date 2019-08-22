@@ -8,29 +8,108 @@
 
 
 .section-2{
-    height: 200vh;
+    margin-top: 100px;
+    height: 100vh;
     background-color: #fff;
+    position: relative;
 }
-.intro-2{
+.intro-glasses{
+    position: relative;
+    height:100vh;
+    width: 100%;
+}
+.intro-2-men{
     display: inline-block;
     text-align: center;
-    position: relative;
-    top: 200px;
-    left: 200px;
+    position: absolute;
+    top: 5vh;
+    left: 5vh;
     letter-spacing: 1px;
 }
-.intro-2 > h1{
+.intro-2-men > h1, .intro-2-women > h1{
     font-size: 36px;
 }
-.intro-2 > .glasses-2{
+.intro-2-men > .glasses-men-2, .intro-2-women > .glasses-women-2{
     width: 300px;
     margin: 20px;
 }
-.intro-2 > .change-glasses-2{
+.intro-2-men > .change-glasses-2{
     position: relative;
     right: 45%;
     bottom: 10px;
 }
-.intro-2 > .change-glasses-2:hover{
+.intro-2-men > .change-glasses-2:hover{
     cursor: pointer;
+}
+.intro-2-women{
+    display: inline-block;
+    position: absolute;
+    bottom: 100px;
+    right: 100px;
+    text-align: center;
+}
+.overlay-2{
+    background-color: rgb(223, 223, 223);
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+    /* clip-path: polygon(100% 100%, 100% 0, 50% 50%, 0% 100%); */
+    /* clip-path: polygon(0 0, 100% 0, 50% 50%, 0% 100%); */
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    z-index: 1;
+}
+.welcome-first-2{
+    position: absolute;
+    z-index: 2;
+    width: 40%;
+    left: 30%;
+    top: 20vh;
+    text-align: center;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    opacity: 0;
+    transform: translateX(-100px);
+}
+.welcome-first-2-visible{
+    opacity: 1;
+    transform: translateX(0px);
+    transition: all 1s;
+}
+.welcome-first-2 > h1{
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+.mens-btn, .womens-btn{
+    padding: 10px 20px;
+    background: rgb(85, 85, 85);
+    color: #fff;
+    border: 2px solid rgb(85, 85, 85);
+    border-radius: 5px;
+    margin-top: 30px;
+    cursor: pointer;
+    outline: none;
+}
+.mens-fact{
+    position: absolute;
+    right: 5vh;
+    top: 75vh;
+    z-index: 2;
+    opacity: 0;
+}
+.mens-fact > h1{
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.welcome-second-2{
+    position: absolute;
+    z-index: 2;
+    width: 40%;
+    left: 30%;
+    top: 40vh;
+    text-align: center;
+    letter-spacing: 1px;
+    display: none;
 }
