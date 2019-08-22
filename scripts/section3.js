@@ -1,14 +1,18 @@
 function checkVisibility() {
-    let element = document.querySelector('.contact-text-3');
     
-    // console.log(isInViewPort(element));
+    const elements = document.querySelectorAll('.contact');
 
-    if (isInViewPort(element)) {
-        element.classList.add('contact-text-visible-3');
-    }
-    else {
-        element.classList.remove('contact-text-visible-3');
-    }
+    elements.forEach(function(element) {
+
+        // console.log(element);
+
+        if (isInViewPort(element)) {
+            element.classList.add('contact-section-visible');
+        }
+        else {
+            element.classList.remove('contact-section-visible');
+        }
+    });
 }
 
 function isInViewPort(element) {

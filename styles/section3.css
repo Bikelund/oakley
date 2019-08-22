@@ -1,19 +1,35 @@
 .section-3 {
     /* font-family: 'Montserrat', sans-serif; */
     /* background: blue; */
-    height: 20vh;
-    text-align: center;
+    height: 50vh;
     font-size: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.contact-text-3 {
-    display: inline-block;
+.text-3 {
+    /* border: solid; */
+    align-self: center;
     opacity: 0;
     transform: translateX(-200px);
     transition: all 1s ease-out;
 }
 
-.contact-text-visible-3 {
+.images-3 {
+    /* border: solid; */
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    transition: all 1.5s ease-out;
+}
+
+.contact-section-visible {
     opacity: 1;
     transform: translateX(0);
+}
+
+.img-3 {
+    width: 75px;
+    margin: 10px;
 }
