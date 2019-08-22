@@ -121,3 +121,29 @@ anime({
   direction: 'alternate',
   easing: 'easeInOutCubic'
 });
+
+/* anime({
+  targets: '.line',
+    scaleX: [0,1],
+    opacity: [0,1],
+    easing: "easeInOutExpo",
+    duration: 1000,
+    delay: 2500,
+    backgroundColor: '#DAA520'
+}) */
+
+anime.timeline()
+.add({
+  targets: '.line',
+  scaleX: [0,1],
+  opacity: [0,1],
+  easing: "easeInOutExpo",
+  duration: 1000,
+  delay: 2500
+}).add({
+  targets: '.line',
+  backgroundColor: '#DAA520',
+  easing: "easeInOutExpo",
+  duration: 500,
+  scaleY: [1,1.5]
+});

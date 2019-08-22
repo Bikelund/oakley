@@ -118,3 +118,15 @@ body{
     top: 60vh;
     left: 50vw;
 }
+
+.line {
+    height: 4px;
+    width: 100%;
+    background-color: #000;
+    transform-origin: 0% 0%; /* Makes the line go left -> right */
+    margin-top: -80px;
+    margin-bottom: 80px;
+
+    position: relative;
+    z-index: -1;
+}
