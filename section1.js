@@ -4,7 +4,7 @@ textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<
 
 anime.timeline().add({
     targets: '.intro-text',
-    delay: 100
+    delay: 50
 }).add({
     targets: '.intro-text1 .letter',
     scale: [4, 1],
@@ -12,12 +12,12 @@ anime.timeline().add({
     easing: "easeOutExpo",
     duration: 1000,
     delay: function(el, i) {
-      return 400*i;
+      return 300*i;
     }
 }).add({
     targets: '.intro-text',
     opacity: [0,1],
-    duration: 2000,
+    duration: 1800,
     translateY: 20,
     translateX: 20,
     easing: "easeOutExpo",
@@ -25,3 +25,38 @@ anime.timeline().add({
         return 400 *(i+1);
     }
 });
+
+/* 
+function parallax() {
+    let chasImg = document.querySelector(".chas");
+    let multiplier = 0.2;
+
+    if (isElementInViewport(chasImg)) {
+        let distance = elementDistanceFromBottomOfViewport(chasImg);
+        console.log(distance);
+        chasImg.style.transform = "translateY(" + multiplier * distance + "px)";
+    }
+}
+  
+function isElementInViewport (el) {
+    let rect = el.getBoundingClientRect();
+
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth) 
+    );
+}
+
+if (window.addEventListener) {
+    addEventListener('DOMContentLoaded', parallax, false); 
+    addEventListener('load', parallax, false);
+    addEventListener('scroll', parallax, false);
+}
+
+function elementDistanceFromBottomOfViewport(el) {
+    let rect = el.getBoundingClientRect();
+
+    return window.innerHeight - rect.top;
+} */
