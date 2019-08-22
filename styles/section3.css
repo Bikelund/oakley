@@ -1,0 +1,19 @@
+.section-3 {
+    /* font-family: 'Montserrat', sans-serif; */
+    /* background: blue; */
+    height: 20vh;
+    text-align: center;
+    font-size: 50px;
+}
+
+.contact-text-3 {
+    display: inline-block;
+    opacity: 0;
+    transform: translateX(-200px);
+    transition: all 1s ease-out;
+}
+
+.contact-text-visible-3 {
+    opacity: 1;
+    transform: translateX(0);
+}
