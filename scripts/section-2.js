@@ -1,17 +1,42 @@
+(function(){
 
 
+function checkForVisibility() {
+    var welcomeText = document.querySelector(".welcome-first-2");
+    if (isElementInViewport(welcomeText)) {
+        welcomeText.classList.add("welcome-first-2-visible");
+    }else{
+        welcomeText.classList.remove("welcome-first-2-visible");
+    }
+}
+function isElementInViewport (el) {
+    var rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth) 
+    );
+}
 
-const nextGlassesBtnS2 = document.querySelector(".change-glasses-2");
-nextGlassesBtnS2.addEventListener("click", () => {
-    const img1 = document.querySelector(".glasses-2");
+if (window.addEventListener) {
+addEventListener('DOMContentLoaded', checkForVisibility, false); 
+addEventListener('load', checkForVisibility, false);
+addEventListener("scroll", checkForVisibility);
+}
+
+
+const nextGlasses = document.querySelector(".change-glasses-2");
+nextGlasses.addEventListener("click", () => {
+    const img1 = document.querySelector(".glasses-men-2");
     const glasses = anime.timeline();
     glasses.add({
         targets: img1,
         opacity: [1, 0],
-        duration: 500,
+        duration: 300,
         easing: "linear",
         translateX: -100,
-    })
+    });
     setTimeout(() => {
         const id = img1.dataset.id;
         switch(id){
@@ -36,14 +61,59 @@ nextGlassesBtnS2.addEventListener("click", () => {
     glasses.add({
         targets: img1,
         translateX: 100,
-        duration: 0,
+        duration: 300,
         easing: "linear",
-    });
+    })
     glasses.add({
         targets: img1,
         opacity: [0, 1],
-        duration: 500,
+        duration: 300,
         easing: "easeInQuad",
         translateX: 0,
     });
-})
+});
+
+const mensBtn = document.querySelector(".mens-btn");
+
+mensBtn.addEventListener("click", () => {
+    let overlayControl = anime.timeline({
+        targets: ".overlay-2",
+        clipPath: " polygon(50% 50%, 100% 0%, 100% 100%, 0% 100%)",
+        duration: 1000,
+        easing: "easeInQuad"
+    })
+    overlayControl.add({
+        targets: ".welcome-first-2",
+        opacity: [1, 0],
+        duration: 1000,
+        easing: "easeInQuad",
+    }, "-=1000")
+    .add({
+        targets: ".welcome-second-2",
+        opacity: [0, 1],
+        duration: 1000,
+        easing: "easeInQuad",
+        begin: () => {
+            document.querySelector(".welcome-second-2").style.display = "initial";
+        },
+    })
+    .add({
+        targets: ".intro-2-men",
+        opacity: [0, 1],
+        timeline: "easeInQuad",
+        duration: 1000
+    }, 200)
+    .add({
+        targets: ".mens-fact",
+        opacity: [0, 1],
+        duration: 1000,
+        easing: "easeInQuad"
+    }, 1000);
+});
+
+
+
+
+
+
+}());
