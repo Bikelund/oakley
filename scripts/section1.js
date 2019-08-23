@@ -42,7 +42,7 @@ anime.timeline({loop: true})
   }
 }).add({
   targets: '.letter-future',
-  color: '#DAA520',
+  color: '#F3F719',
   easing: "easeInExpo",
   duration: 600,
   delay: function(el, i) {
@@ -114,7 +114,7 @@ function elementDistanceFromBottomOfViewport(el) {
 /* Animates the menubar */
 anime({
   targets: '.menu-link',
-  color: '#DAA520',
+  color: '#F3F719',
   duration: 3000,
   direction: 'alternate',
   easing: 'easeInOutCubic'
@@ -131,7 +131,7 @@ anime.timeline()
   delay: 2500
 }).add({
   targets: '.line',
-  backgroundColor: '#DAA520',
+  backgroundColor: '#F3F719',
   easing: "easeInOutExpo",
   duration: 500,
   scaleY: [1,1.5]

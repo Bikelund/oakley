@@ -16,9 +16,10 @@
     text-decoration: none;
     color: black;
     transition: all .6s;
+    padding: 4px 4px;
 }
 .nav-box a:hover {
-    background-color: goldenrod;
+    background-color: #F3F719;
 }
 @keyframes linkFadeIn {
     0% {
