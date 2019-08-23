@@ -119,7 +119,9 @@ mensBtn.addEventListener("click", () => {
         easing: "easeInQuad",
         complete: () => {
             document.querySelector(".mens-btn").style.pointerEvents = "none";
+            document.querySelector(".mens-btn").style.zIndex = "1";
             document.querySelector(".womens-btn").style.pointerEvents = "auto";
+            document.querySelector(".womens-btn").style.zIndex = "2";
         }
     }, "-=1000");
     overlayControl.add({
@@ -179,7 +181,9 @@ womensBtn.addEventListener("click", () => {
         easing: "linear",
         complete: () => {
             document.querySelector(".womens-btn").style.pointerEvents = "none";
+            document.querySelector(".womens-btn").style.zIndex = "1";
             document.querySelector(".mens-btn").style.pointerEvents = "auto";
+            document.querySelector(".mens-btn").style.zIndex = "2";
         }
     }, 0);
     overlayControl.add({
