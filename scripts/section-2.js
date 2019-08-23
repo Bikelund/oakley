@@ -26,81 +26,104 @@ addEventListener("scroll", checkForVisibility);
 }
 
 
-const nextGlasses = document.querySelectorAll(".change-glasses-2");
-nextGlasses.forEach(btn => {
-    btn.addEventListener("click", (e) => {
-        let img1;
-        if(e.target.dataset.gender === "male"){
-            img1 = document.querySelector(".glasses-men-2");
+
+const leftArrow = document.querySelectorAll(".left-arrow-2");
+const rightArrow = document.querySelectorAll(".right-arrow-2");
+
+leftArrow.forEach(btn => {
+    btn.addEventListener("click", event => {
+        let btnType;
+        if(event.target.dataset.gender === "male"){
+            btnType = "male";
+        }else{
+            btnType = "female";
         }
-        else{
-            img1 = document.querySelector(".glasses-women-2");
-        }
-        const glasses = anime.timeline();
-        glasses.add({
-            targets: img1,
-            opacity: [1, 0],
-            duration: 300,
-            easing: "linear",
+        const id = +document.querySelector(`.glasses-${btnType}-2`).dataset.id;
+        const img = document.querySelector(`.glasses-${btnType}-2`);
+        const changeGlasses = anime.timeline();
+        changeGlasses.add({
+            targets: img,
+            duration: 500,
             translateX: -100,
-        });
-        setTimeout(() => {
-            const id = img1.dataset.id;
-            if(e.target.dataset.gender === "male"){
-                switch(id){
-                    case "1":
-                        img1.src = "./images/s2-first-glasses2.jpg";
-                        img1.dataset.id = "2";
-                        break;
-                    case "2":
-                        img1.src = "./images/s2-first-glasses3.jpg";
-                        img1.dataset.id = "3";
-                        break;
-                    case "3":
-                        img1.src = "./images/s2-first-glasses4.jpg";
-                        img1.dataset.id = "4";
-                        break;
-                    default:
-                        img1.src = "./images/s2-first-glasses1.jpg";
-                        img1.dataset.id = "1";
-                        break;
-                }
-            }
-            else{
-                switch(id){
-                    case "1":
-                        img1.src = "./images/s2-second-glasses2.jpg";
-                        img1.dataset.id = "2";
-                        break;
-                    case "2":
-                        img1.src = "./images/s2-second-glasses3.jpg";
-                        img1.dataset.id = "3";
-                        break;
-                    case "3":
-                        img1.src = "./images/s2-second-glasses4.jpg";
-                        img1.dataset.id = "4";
-                        break;
-                    default:
-                        img1.src = "./images/s2-second-glasses1.jpg";
-                        img1.dataset.id = "1";
-                        break;
-                }
-            }
-        }, 500);
-        glasses.add({
-            targets: img1,
-            translateX: 100,
-            duration: 300,
+            opacity: [1, 0],
             easing: "linear",
+            complete: () => {
+                switch(id){
+                    case 1:
+                        img.src = `./images/${btnType}-2.jpg`;
+                        img.dataset.id = 2;
+                        break;
+                    case 2:
+                        img.src = `./images/${btnType}-3.jpg`;
+                        img.dataset.id = 3;
+                        break;
+                    case 3:
+                        img.src = `./images/${btnType}-4.jpg`;
+                        img.dataset.id = 4;
+                        break;
+                    default:
+                        img.src = `./images/${btnType}-1.jpg`;
+                        img.dataset.id = 1;
+                        break;
+                }
+            }
         })
-        glasses.add({
-            targets: img1,
+        .add({
+            targets: img,
+            translateX: [100, 0],
+            duration: 500,
             opacity: [0, 1],
-            duration: 300,
-            easing: "easeInQuad",
-            translateX: 0,
+            easing: "easeInQuad"
         });
-    });
+    })
+})
+
+rightArrow.forEach(btn => {
+    btn.addEventListener("click", event => {
+        let btnType;
+        if(event.target.dataset.gender === "male"){
+            btnType = "male";
+        }else{
+            btnType = "female";
+        }
+        const id = +document.querySelector(`.glasses-${btnType}-2`).dataset.id;
+        const img = document.querySelector(`.glasses-${btnType}-2`);
+        const changeGlasses = anime.timeline();
+        changeGlasses.add({
+            targets: img,
+            duration: 500,
+            translateX: 100,
+            opacity: [1, 0],
+            easing: "linear",
+            complete: () => {
+                switch(id){
+                    case 1:
+                        img.src = `./images/${btnType}-4.jpg`;
+                        img.dataset.id = 4;
+                        break;
+                    case 2:
+                        img.src = `./images/${btnType}-1.jpg`;
+                        img.dataset.id = 1;
+                        break;
+                    case 3:
+                        img.src = `./images/${btnType}-2.jpg`;
+                        img.dataset.id = 2;
+                        break;
+                    default:
+                        img.src = `./images/${btnType}-3.jpg`;
+                        img.dataset.id = 3;
+                        break;
+                }
+            }
+        })
+        .add({
+            targets: img,
+            translateX: [-100, 0],
+            duration: 500,
+            opacity: [0, 1],
+            easing: "easeInQuad"
+        });
+    })
 })
 
 const mensBtn = document.querySelector(".mens-btn");
