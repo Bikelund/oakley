@@ -72,6 +72,7 @@ anime.timeline({loop: true})
 function parallax() {
   let headers = document.querySelectorAll(".mash");
   let mashOdd = document.querySelectorAll('.mashOdd');
+  let imageP = document.querySelectorAll('.image-p');
   let multiplier = 0.3;
   
   headers.forEach(function(header) {
@@ -84,6 +85,12 @@ function parallax() {
     if (isElementInViewport(odd)) {
       let distance = elementDistanceFromBottomOfViewport(odd);
       odd.style.transform = "translateY(-" + 0.2 * distance + "px)";
+    }
+  });
+  imageP.forEach(function(p) {
+    if(isElementInViewport(p)) {
+      let distance = elementDistanceFromBottomOfViewport(p);
+      p.style.transform = "translateY(-" + 0.2 * distance + "px)";
     }
   });
 }
