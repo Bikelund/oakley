@@ -29,18 +29,35 @@
 .intro-2-men > h1, .intro-2-women > h1{
     font-size: 1.5em;
 }
-.intro-2-men > .glasses-men-2, .intro-2-women > .glasses-women-2{
+.intro-2-men > .glasses-male-2, .intro-2-women > .glasses-female-2{
     width: 300px;
     margin: 20px;
 }
-.intro-2-men > .change-glasses-2, .change-women-glasses-2{
+
+
+.change-glasses{
     position: relative;
-    right: 45%;
-    bottom: 10px;
+    bottom: 10%;
 }
-.intro-2-men > .change-glasses-2:hover, .change-women-glasses-2:hover{
+.right-arrow-2, .left-arrow-2{
+    position: absolute;
+}
+.right-arrow-2{
+    right: 35%;
+    bottom: 5%;
+}
+.left-arrow-2{
+    left: 35%;
+    bottom: 5%;
+}
+.change-glasses img{
+    width: 30px;
+}
+.right-arrow-2:hover, .left-arrow-2:hover{
     cursor: pointer;
 }
+
+
 .intro-2-women{
     display: inline-block;
     position: absolute;
